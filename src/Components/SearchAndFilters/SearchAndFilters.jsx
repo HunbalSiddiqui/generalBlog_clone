@@ -6,7 +6,7 @@ function SearchAndFilters() {
             <div className="blogsearch flex">
                 <form>
                     <input type="search" name="" id="" className="para1" placeholder="Search..."/>
-                    <button className="para1 whiteBack blogsearchBtn"><i class="fab fa-searchengin"></i></button>
+                    <button className="para1 whiteBack blogsearchBtn"><i className="fab fa-searchengin"></i></button>
                 </form>
             </div>
 

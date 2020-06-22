@@ -9,7 +9,7 @@ function HomeNav() {
                 <h1 className="heading3 white lighter">Subscribe for newsletter</h1>
             <form>
                 <input className="para1" type="email" name="" id="subscribtion_email" placeholder="Email" required/>
-                <button className="para1 whiteBack pointer subscibeBtn"><i class="far fa-paper-plane"></i></button>
+                <button className="para1 whiteBack pointer subscibeBtn"><i className="far fa-paper-plane"></i></button>
             </form>
             </div>
 

@@ -71,3 +71,23 @@ font-size: 62.5%;
 .blackBack{
   background-color: brown;
 }
+
+
+
+@media screen and (max-width: 900px) {
+  html{
+      font-size: 52.5%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  html{
+      font-size: 45.5%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  html{
+      font-size: 35.5%;
+  }
+}

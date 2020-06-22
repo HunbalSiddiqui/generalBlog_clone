@@ -3,7 +3,7 @@ import './BlogsList.css'
 import Blog from '../Blog/Blog'
 function BlogsList() {
     return (
-        <div className="blogs_list flex-col">
+        <div className="blogs_list">
             <Blog/>
             <Blog/>
             <Blog/>
