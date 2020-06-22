@@ -1,0 +1,19 @@
+.homeNav_wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+    display: flex;
+    flex-flow: column;
+}
+.tagName{
+    flex: 3;
+}
+.subscription{
+    flex: 1;
+}
+.nav_footer{
+    flex: 1;
+}
+.subscibeBtn{
+    border-left: 1px solid black;
+}
