@@ -1,0 +1,33 @@
+.blog{
+    width: 45rem;
+    height: 20rem;
+    background-color: white;
+    display: flex;
+}
+.blog_img{
+    flex: 1;
+}
+.blog_img_size{
+    width: 80%;
+    height: 50%;
+    border-radius: 100%;
+    align-self: flex-start;
+}
+
+
+.blog_content{
+    flex: 3;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.details{
+    width: 100%;
+}
+.util{
+    flex: 1;
+}
+
+.readmoreBtn{
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+}
