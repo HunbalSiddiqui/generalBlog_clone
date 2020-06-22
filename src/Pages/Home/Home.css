@@ -1,0 +1,26 @@
+.home_wrapper{
+    display: grid;
+    grid-template-columns: minmax(0rem,1fr) 1300px minmax(0rem,1fr);
+    grid-template-rows: 100vh;
+    grid-template-areas: '. home_cont .';
+}
+.home_cont{
+    grid-area: home_cont;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 30fr 70fr;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas: 'home_nav_area search_filters'
+                         'home_nav_area home_blogs_area';
+}
+.home_nav_area{
+    grid-area: home_nav_area;
+    border-right: 1px solid black;
+}
+.search_filters{
+    grid-area: search_filters;
+    border-bottom: 1px solid black;
+}
+.home_blogs_area{
+    grid-area: home_blogs_area;
+}
