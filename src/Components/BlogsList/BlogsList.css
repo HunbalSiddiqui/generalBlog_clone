@@ -1,9 +1,6 @@
 .blogs_list{
-    background-color: thistle;
-    /* margin-top: 5%; */
     width: 100%;
     height: min-content;
-    /* overflow-y: scroll; */
     display: grid;
     grid-row-gap: 5rem;
     justify-items: center;
