@@ -23,4 +23,5 @@
 }
 .home_blogs_area{
     grid-area: home_blogs_area;
+    overflow-y: scroll;
 }
