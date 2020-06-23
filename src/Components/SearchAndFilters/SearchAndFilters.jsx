@@ -12,10 +12,10 @@ function SearchAndFilters() {
 
             <div className="filters flex">
                 <h1 className="filter para2 flex lighter pointer bolder">All</h1>
-                <h1 className="filter para2 flex lighter pointer">Technology</h1>
+                {/* <h1 className="filter para2 flex lighter pointer">Technology</h1>1 */}
                 <h1 className="filter para2 flex lighter pointer">Travel</h1>
                 <h1 className="filter para2 flex lighter pointer">Technology</h1>
-                <h1 className="filter para2 flex lighter pointer">Food</h1>
+                <h1 className="filter para2 flex lighter pointer">LifeStyle</h1>
             </div>
         </div>
     )
