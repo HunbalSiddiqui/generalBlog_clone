@@ -20,7 +20,6 @@ function BlogsList(props) {
 
                         if(task.category===TRAVEL)
                             {
-                                console.log("entered")
                                 return(
                                     <Blog key={task.uid} blog={task}/>
                                 )
@@ -31,7 +30,6 @@ function BlogsList(props) {
 
                             if(task.category===TECHNOLOGY)
                                 {
-                                    console.log("entered")
                                     return(
                                         <Blog key={task.uid} blog={task}/>
                                     )
