@@ -9,13 +9,15 @@ function BlogsList(props) {
     return (
         <div className="blogs_list">
             {
+            //checking if props.searchVal is '' than display according to selected filter
+            props.searchVal === '' ?
                 AllBlogs.map((task)=>{
                     switch (props.filter) {
                         case ALL:
                          return(
                             <Blog key={task.uid} blog={task}/>
                             )
-                            break;
+                            // break;
                         case TRAVEL:
 
                         if(task.category===TRAVEL)
@@ -46,18 +48,33 @@ function BlogsList(props) {
                             break;
 
                         default:
-                            break;
+                            return null
+                            
                     }
+                    return null
                     
-                })                
+                })    
+                :
+                AllBlogs.map((task)=>{
+                    if(task.title.toLowerCase().includes(props.searchVal.toLowerCase()))
+                    {
+                     return (  <Blog key={task.uid} blog={task}/>)
+                    }
+                    else{
+                        return null
+                    }
+                })            
             }
+
+
         </div>
     )
 }
 
 var mapStateToProps = (state) =>{
     return {
-        filter : state.userReducer.filter
+        filter : state.userReducer.filter,
+        searchVal : state.userReducer.searchVal
     }
 }
 

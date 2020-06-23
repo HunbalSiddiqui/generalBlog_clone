@@ -6,6 +6,12 @@
     flex: 1;
     width: 100%;
 }
+.searchForm{
+    width: 100%;
+}
+.searchbar{
+    width: 30%;
+}
 .blogsearchBtn{
     border-left: 0.1px solid black;
 }

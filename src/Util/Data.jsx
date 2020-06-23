@@ -65,7 +65,7 @@ export var AllBlogs = [
     }
     ,
     {
-        title : 'Google employees demand company stop selling tech to police',
+        title : 'Apple  has announced an upcoming change to App Store rules',
         content : 'Apple  has announced an upcoming change to App Store rules that could mark a major shift in how the marketplace operates. Developers will soon be able to challenge not just the rejection of an app, but the rule that prompted that rejection. Bug fixes will also no longer be held up by rule violations.',
         category : `${TECHNOLOGY}`,
         uid : '0j712kd2',

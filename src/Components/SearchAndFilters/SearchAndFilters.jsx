@@ -1,9 +1,11 @@
 import React from 'react'
 import './SearchAndFilters.css'
 import {connect} from 'react-redux'
-import { applyFilter } from '../../Redux/userReducer/userActions'
+import { applyFilter, searching } from '../../Redux/userReducer/userActions'
 import { ALL, TRAVEL, TECHNOLOGY, LIFESTYLE } from '../../Redux/userReducer/userConstants'
 function SearchAndFilters(props) {
+
+    // var [searchVal,setsearchVal] = useState('')
 
     var changeFilterFn = (filter,e) =>{
         props.applyFilter(filter)
@@ -18,14 +20,15 @@ function SearchAndFilters(props) {
     return (
         <div className="search_filter_wrapper flex-col">
             <div className="blogsearch flex">
-                <form>
-                    <input type="search" name="" id="" className="para1" placeholder="Search..."/>
+                <form className="searchForm flex">
+                    <input type="search" name="" id="" className="para1 searchbar" placeholder="Search through keywords..." value={props.searchVal}
+                    onChange={(e)=>{props.seaching(e.target.value)}}/>
                     <button className="para1 whiteBack blogsearchBtn"><i className="fab fa-searchengin"></i></button>
                 </form>
             </div>
 
             <div className="filters flex">
-                <h1 className="filter para2 flex lighter pointer common" id="alltab"
+                <h1 className="filter para2 flex lighter pointer common bolder" id="alltab"
                 onClick={(e)=>{changeFilterFn(ALL,e)}}>All</h1>
                 <h1 className="filter para2 flex lighter pointer common" id="techtab"
                 onClick={(e)=>{changeFilterFn(TECHNOLOGY,e)}}>Technology</h1>
@@ -39,7 +42,15 @@ function SearchAndFilters(props) {
 }
 
 var actions = {
-    applyFilter : applyFilter
+    applyFilter : applyFilter,
+    seaching : searching
 }
 
-export default connect(null,actions)(SearchAndFilters)
+var mapStateToProps = (state) =>{
+
+    return{
+        searchVal : state.userReducer.searchVal
+    }
+}
+
+export default connect(mapStateToProps,actions)(SearchAndFilters)
