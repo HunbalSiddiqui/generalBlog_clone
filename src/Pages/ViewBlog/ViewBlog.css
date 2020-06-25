@@ -9,9 +9,11 @@
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 10vh 10vh 80vh;
+    background-color: whitesmoke;
+    box-shadow: 0 0 10px;
     grid-template-areas: 'viewblog_navarea viewblog_header'
-                         'viewblog_navarea blog'
-                         'viewblog_navarea blog';
+                         'viewblog_navarea blog_view'
+                         'viewblog_navarea blog_view';
 }
 .viewblog_navarea{
     grid-area: viewblog_navarea;
@@ -20,6 +22,28 @@
     grid-area: viewblog_header;
     border-bottom: 1px solid brown;
 }
-.blog{
-    grid-area: blog;
+.blog_view{
+    grid-area: blog_view;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: minmax(20%,min-content) minmax(50%,min-content) minmax(30%,min-content) ;
+    grid-template-areas: 'title'
+                         'blog_image'
+                         'story';
+}
+.title{
+    grid-area: title;
+}
+.blog_image{
+    grid-area: blog_image;
+}
+.image_setting{
+    width: 80%;
+    height: 100%;
+}
+.story{
+    grid-area: story;
+    text-align: center;
 }
