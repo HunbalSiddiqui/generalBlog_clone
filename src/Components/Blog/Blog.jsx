@@ -4,7 +4,7 @@ import './Blog.css'
 function Blog(props) {
     var {title,content,category,img} = props.blog
     return (
-        <div className="blog">
+        <div className="blog_wrapper">
             <div className="blog_img flex">
                 <img className="blog_img_size" src={img} alt=""/>
             </div>

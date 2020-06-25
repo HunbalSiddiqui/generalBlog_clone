@@ -1,0 +1,21 @@
+.viewblog_wrapper{
+    display: grid;
+    grid-template-columns: minmax(0rem,1fr) minmax(min-content,1300px) minmax(0rem,1fr);
+    grid-template-rows: minmax(100vh,min-content);
+    grid-template-areas: '. viewblog_cont .';
+}
+.viewblog_cont{
+    grid-area: viewblog_cont;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas: 'viewblog_navarea viewblog_header'
+                         'viewblog_navarea blog';
+}
+.viewblog_navarea{
+    grid-area: viewblog_navarea;
+}
+.viewblog_header{
+    grid-area: viewblog_header;
+    background-color: white;border-bottom: 1px solid brown;
+}
