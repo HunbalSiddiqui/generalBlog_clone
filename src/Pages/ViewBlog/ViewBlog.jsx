@@ -4,16 +4,12 @@ import HomeNav from '../../Components/HomeNav/HomeNav'
 import BlogShare from '../../Components/BlogShare/BlogShare'
 import {connect} from 'react-redux'
 import { AllBlogs } from '../../Util/Data'
-// import {Redirect} from 'react-router-dom'
 function ViewBlog(props) {
-    console.log(props.blogId)
-    console.log(AllBlogs)
-
     var [title,setTitle] = useState(null)
     var [image,setimage] = useState(null)
     var [content,setContent] = useState(null)
     var [category,setCategory] = useState(null)
-
+    var [story,setStory] = useState(null)
     useEffect(()=>{
         if(props.blogId)
         {
@@ -25,6 +21,7 @@ function ViewBlog(props) {
                     setimage(element.img);
                     setContent(element.content);
                     setCategory(element.category);
+                    setStory(element.story);
                 }
             });   
         }
@@ -43,9 +40,9 @@ function ViewBlog(props) {
                     <BlogShare/>
                 </div>
                 <div className="blog_view">
-    <div className="title heading4"><h1 className='lighter'>{title}</h1></div>
-    <div className="blog_image flex"><img className="image_setting" src={image} alt="" srcset=""/></div>
-    <div className="story"><h1 className='para1 lighter'>{content}</h1></div>
+                    <div className="title heading4"><h1 className='lighter'>{title}</h1></div>
+                    <div className="blog_image flex"><img className="image_setting" src={image} alt=""/></div>
+                    <div className="story"><h1 className='para1 lighter'>{story}</h1></div>
                 </div>
 
             </div>

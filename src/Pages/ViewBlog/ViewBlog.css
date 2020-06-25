@@ -28,7 +28,7 @@
     overflow-x: hidden;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: minmax(20%,min-content) minmax(50%,min-content) minmax(30%,min-content) ;
+    grid-template-rows: minmax(20%,min-content) 50% minmax(30%,min-content) ;
     grid-template-areas: 'title'
                          'blog_image'
                          'story';
@@ -38,6 +38,7 @@
 }
 .blog_image{
     grid-area: blog_image;
+    margin-top: 5%;margin-bottom: 5%;
 }
 .image_setting{
     width: 80%;
@@ -46,4 +47,39 @@
 .story{
     grid-area: story;
     text-align: center;
+    margin-left: 5%;margin-right: 5%;
 }
+
+@media screen and (max-width: 600px) {
+
+    .viewblog_cont{
+        grid-area: viewblog_cont;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 10vh minmax(10vh,min-content) 80vh;
+        background-color: whitesmoke;
+        box-shadow: 0 0 10px;
+        grid-template-areas: 'viewblog_header viewblog_header'
+                             'viewblog_navarea viewblog_navarea'
+                             'blog_view blog_view';
+    } 
+
+
+    .blog_view{
+        grid-area: blog_view;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: minmax(20%,min-content) 30% minmax(30%,min-content) ;
+        grid-template-areas: 'title'
+                             'blog_image'
+                             'story';
+    }
+    
+
+    .image_setting{
+        width: 40%;
+        height: 100%;
+    }
+  }

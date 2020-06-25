@@ -1,0 +1,1 @@
+export const appleBody = "Apple  has announced an upcoming change to App Store rules that could mark a major shift in how the marketplace operates. Developers will soon be able to challenge not just the rejection of an app, but the rule that prompted that rejection. Bug fixes will also no longer be held up by rule violations.";

@@ -42,10 +42,11 @@
         grid-area: home_cont;
         background-color: whitesmoke;
         display: grid;
-        grid-template-columns: 0% 100%;
-        grid-template-rows: 20vh 80vh;
-        grid-template-areas: 'home_nav_area search_filters'
-                             'home_nav_area home_blogs_area';
+        grid-template-columns:100%;
+        grid-template-rows: 20vh 80vh minmax(10vh,min-content);
+        grid-template-areas: 'search_filters search_filters'
+                             'home_blogs_area home_blogs_area'
+                             'home_nav_area home_nav_area';
     }
-.home_nav_area{display: none;}
+/* .home_nav_area{display: none;} */
   }
