@@ -1,0 +1,8 @@
+.BlogShare_wrapper{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+.social_icon{
+    flex: 1;
+}

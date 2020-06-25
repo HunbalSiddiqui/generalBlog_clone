@@ -1,4 +1,4 @@
-import { CHANGE_FILTER, SEARCH_VALUE } from "./userConstants"
+import { CHANGE_FILTER, SEARCH_VALUE, VIEW_BLOG } from "./userConstants"
 
 
 export var applyFilter = (filter) => {
@@ -15,6 +15,16 @@ export var searching = (val) =>{
         Dispatch({
             type :SEARCH_VALUE,
             payload : val
+        })
+    }
+}
+
+
+export var viewBlog = (blogId) => {
+    return async(Dispatch)=>{
+        Dispatch({
+            type:VIEW_BLOG,
+            payload : blogId
         })
     }
 }

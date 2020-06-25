@@ -1,8 +1,16 @@
 import React from 'react'
 import './Blog.css'
-// import img1 from './imgs/image_1.jpg'
+import {connect} from 'react-redux'
+import { viewBlog } from '../../Redux/userReducer/userActions'
+import {withRouter} from 'react-router-dom'
 function Blog(props) {
-    var {title,content,category,img} = props.blog
+    var {title,content,category,img,uid} = props.blog
+
+    var viewBlog = (id) => {
+        props.viewBlog(id);
+        props.history.push(`/viewBlog/${title}`)
+    }
+
     return (
         <div className="blog_wrapper">
             <div className="blog_img flex">
@@ -17,10 +25,15 @@ function Blog(props) {
                     <p className="para4 flex lighter util"><i className="far fa-comment"></i> Comments</p>
                 </div>
                 <h1 className="para2 lighter">{content}</h1>
-                <button className="para2 readmoreBtn lighter pointer">ReadMore <i className="fas fa-chevron-right"></i></button>
+                <button className="para2 readmoreBtn lighter pointer" id={uid}
+                onClick={(e)=>{viewBlog(e.target.id)}}>ReadMore <i className="fas fa-chevron-right"></i></button>
             </div>
         </div>
     )
 }
 
-export default Blog
+var actions = {
+    viewBlog : viewBlog
+}
+
+export default connect(null,actions)(withRouter(Blog))

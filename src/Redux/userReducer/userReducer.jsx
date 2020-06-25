@@ -1,8 +1,9 @@
-import { ALL, CHANGE_FILTER, SEARCH_VALUE } from "./userConstants"
+import { ALL, CHANGE_FILTER, SEARCH_VALUE, VIEW_BLOG } from "./userConstants"
 
 var initialState = {
     filter : ALL,
-    searchVal : ''
+    searchVal : '',
+    blogId : null
 }
 
 var userReducer = (state=initialState,action) => {
@@ -17,6 +18,11 @@ var userReducer = (state=initialState,action) => {
             return{
                 ...state,
                 searchVal : payload
+            }
+        case VIEW_BLOG:
+            return{
+                ...state,
+                blogId : payload
             }
         default:
             return state

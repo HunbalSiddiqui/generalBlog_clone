@@ -1,9 +1,11 @@
 import React from 'react'
 import './HomeNav.css'
-function HomeNav() {
+import {withRouter} from 'react-router-dom'
+function HomeNav(props) {
     return (
         <div className="homeNav_wrapper">
-            <div className="tagName flex"><h1 className="heading3 white bolder">M.Hunbal Siddiqui</h1></div>
+            <div className="tagName flex"><h1 className="heading3 white bolder pointer"
+            onClick={()=>{props.history.push('/')}}>MHS-BLOGS</h1></div>
 
             <div className="subscription flex-col">
                 <h1 className="heading3 white lighter">Subscribe for newsletter</h1>
@@ -21,4 +23,4 @@ function HomeNav() {
     )
 }
 
-export default HomeNav
+export default withRouter(HomeNav)

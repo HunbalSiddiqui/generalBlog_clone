@@ -8,8 +8,9 @@
     grid-area: viewblog_cont;
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 20vh 80vh;
+    grid-template-rows: 10vh 10vh 80vh;
     grid-template-areas: 'viewblog_navarea viewblog_header'
+                         'viewblog_navarea blog'
                          'viewblog_navarea blog';
 }
 .viewblog_navarea{
@@ -17,5 +18,8 @@
 }
 .viewblog_header{
     grid-area: viewblog_header;
-    background-color: white;border-bottom: 1px solid brown;
+    border-bottom: 1px solid brown;
+}
+.blog{
+    grid-area: blog;
 }

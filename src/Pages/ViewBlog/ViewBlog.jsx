@@ -1,6 +1,8 @@
 import React from 'react'
 import './ViewBlog.css'
 import HomeNav from '../../Components/HomeNav/HomeNav'
+import BlogShare from '../../Components/BlogShare/BlogShare'
+
 function ViewBlog() {
     return (
         <div className="viewblog_wrapper">
@@ -8,7 +10,9 @@ function ViewBlog() {
                 <div className="viewblog_navarea">
                     <HomeNav/>
                 </div>
-                <div className="viewblog_header"></div>
+                <div className="viewblog_header">
+                    <BlogShare/>
+                </div>
             </div>
         </div>
     )
