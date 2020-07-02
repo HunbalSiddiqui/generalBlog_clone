@@ -4,6 +4,7 @@ import HomeNav from '../../Components/HomeNav/HomeNav'
 import BlogShare from '../../Components/BlogShare/BlogShare'
 import {connect} from 'react-redux'
 import { AllBlogs } from '../../Util/Data'
+import { firestore } from '../../Firebase/Firebase'
 function ViewBlog(props) {
     var [title,setTitle] = useState(null)
     var [image,setimage] = useState(null)
@@ -13,22 +14,23 @@ function ViewBlog(props) {
     useEffect(()=>{
         if(props.blogId)
         {
-            //for each will be unoptimized for large bulk of blogs...as break cant be used in it
-            AllBlogs.forEach(element => {
-                if(element.uid===props.blogId)
-                {
-                    setTitle(element.title);
-                    setimage(element.img);
-                    setContent(element.content);
-                    setCategory(element.category);
-                    setStory(element.story);
-                }
-            });   
+            fetchBlogDetails()
         }
         else{
             props.history.push('/');
         }
     },[props.blogId])
+
+    var fetchBlogDetails =async () =>{
+        //fetching
+        var snap = await firestore.collection('blogs').doc(props.blogId).get();
+        console.log(snap.data())
+        setTitle(snap.data().title);
+        setimage(snap.data().img);
+        setContent(snap.data().content);
+        setCategory(snap.data().category);
+        setStory(snap.data().story);
+    }
 
     return (
         <div className="viewblog_wrapper">
@@ -42,7 +44,7 @@ function ViewBlog(props) {
                 <div className="blog_view">
                     <div className="title heading4"><h1 className='lighter'>{title}</h1></div>
                     <div className="blog_image flex"><img className="image_setting" src={image} alt=""/></div>
-                    <div className="story"><h1 className='para1 lighter'>{story}</h1></div>
+                    <div className="story"><h1 className='para1 bolder'>{story}</h1></div>
                 </div>
 
             </div>
