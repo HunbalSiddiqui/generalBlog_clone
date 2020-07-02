@@ -1,20 +1,33 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Blog.css'
 import {connect} from 'react-redux'
 import { viewBlog } from '../../Redux/userReducer/userActions'
 import {withRouter} from 'react-router-dom'
+import { firebaseStorage } from '../../Firebase/Firebase'
 function Blog(props) {
     var {title,content,category,img,uid} = props.blog
+    //for blog image
+    var [Image,setImage] = useState(null)
 
-    var viewBlog = (id) => {
-        props.viewBlog(id);
+    var viewBlog = () => {
+        props.viewBlog({...props.blog,Image});
         props.history.push(`/viewBlog/${title}`)
     }
 
+    useEffect(()=>{
+        fetchImage()
+    })
+
+    var fetchImage = async() => {
+        var Imgsnap = await firebaseStorage.ref(`images/${props.blog.img}`).getDownloadURL()
+        setImage(Imgsnap)        
+    }
+
     return (
-        <div className="blog_wrapper">
+    Image ?
+           <div className="blog_wrapper">
             <div className="blog_img flex">
-                <img className="blog_img_size" src={img} alt=""/>
+                <img className="blog_img_size" src={Image} alt={img}/>
             </div>
 
             <div className="blog_content flex-col">
@@ -26,9 +39,11 @@ function Blog(props) {
                 </div>
                 <h1 className="para2 lighter">{content}</h1>
                 <button className="para2 readmoreBtn lighter pointer" id={uid}
-                onClick={(e)=>{viewBlog(e.target.id)}}>ReadMore <i className="fas fa-chevron-right"></i></button>
+                onClick={(e)=>{viewBlog()}}>ReadMore <i className="fas fa-chevron-right"></i></button>
             </div>
         </div>
+        :
+        null
     )
 }
 

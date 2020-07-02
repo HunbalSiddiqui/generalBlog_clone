@@ -3,7 +3,7 @@ import { ALL, CHANGE_FILTER, SEARCH_VALUE, VIEW_BLOG } from "./userConstants"
 var initialState = {
     filter : ALL,
     searchVal : '',
-    blogId : null
+    blogObj : null
 }
 
 var userReducer = (state=initialState,action) => {
@@ -22,7 +22,7 @@ var userReducer = (state=initialState,action) => {
         case VIEW_BLOG:
             return{
                 ...state,
-                blogId : payload
+                blogObj : payload
             }
         default:
             return state

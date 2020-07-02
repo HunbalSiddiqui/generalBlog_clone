@@ -3,16 +3,15 @@ import './ViewBlog.css'
 import HomeNav from '../../Components/HomeNav/HomeNav'
 import BlogShare from '../../Components/BlogShare/BlogShare'
 import {connect} from 'react-redux'
-import { AllBlogs } from '../../Util/Data'
 import { firestore } from '../../Firebase/Firebase'
 function ViewBlog(props) {
     var [title,setTitle] = useState(null)
     var [image,setimage] = useState(null)
-    var [content,setContent] = useState(null)
+    // var [content,setContent] = useState(null)
     var [category,setCategory] = useState(null)
     var [story,setStory] = useState(null)
     useEffect(()=>{
-        if(props.blogId)
+        if(props.blogObj)
         {
             fetchBlogDetails()
         }
@@ -23,13 +22,16 @@ function ViewBlog(props) {
 
     var fetchBlogDetails =async () =>{
         //fetching
-        var snap = await firestore.collection('blogs').doc(props.blogId).get();
-        console.log(snap.data())
-        setTitle(snap.data().title);
-        setimage(snap.data().img);
-        setContent(snap.data().content);
-        setCategory(snap.data().category);
-        setStory(snap.data().story);
+        // var snap = await firestore.collection('blogs').doc(props.blogId).get();
+        // console.log(snap.data())
+        // setTitle(snap.data().title);
+        // setimage(snap.data().img);
+        // setContent(snap.data().content);
+        // setCategory(snap.data().category);
+        // setStory(snap.data().story);
+        setTitle(props.blogObj.title)
+        setStory(props.blogObj.story)
+        setimage(props.blogObj.Image)
     }
 
     return (
@@ -54,7 +56,8 @@ function ViewBlog(props) {
 
 var mapStateToProps = (state) =>{
     return{
-        blogId : state.userReducer.blogId
+        blogId : state.userReducer.blogId,
+        blogObj : state.userReducer.blogObj
     }
 }
 

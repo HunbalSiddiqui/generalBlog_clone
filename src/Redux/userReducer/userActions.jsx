@@ -20,11 +20,11 @@ export var searching = (val) =>{
 }
 
 
-export var viewBlog = (blogId) => {
+export var viewBlog = (blogObj) => {
     return async(Dispatch)=>{
         Dispatch({
             type:VIEW_BLOG,
-            payload : blogId
+            payload : blogObj,
         })
     }
 }
